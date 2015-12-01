@@ -1,0 +1,112 @@
+<!doctype>
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-6 col-xs-offset-3">
+				<div class="page-header">
+					<h2>Stuffy Doll Problem Solver</h2>
+		
+					<p>Enter the number of Pestermites on play and hit <em>Solve the problem!</em> to cast Seasons Beatings and check the results.</p>
+				</div>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-xs-6 col-xs-offset-3">
+				<div class="form-horizontal">
+					<div class="form-group">
+						<label for="inputEmail3" class="col-sm-2 control-label">Pestermites</label>
+						
+						<div class="col-sm-10">
+							<input class="form-control" type="number" id="howmany" value="1000000" />
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<div class="col-sm-offset-2 col-sm-10">
+							<button class="btn btn-default" id="solve">Solve the problem!</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-xs-6 col-xs-offset-3">
+				<hr>
+				
+				<pre class="pre-scrollable" id="results"></pre>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-xs-6 col-xs-offset-3">
+				<em>Created by Miky Moya because of too much free time.</em>
+			</div>
+		</div>
+	</div>
+	
+	<script language="JavaScript" type="text/javascript">
+	<!--
+	document.getElementById( "solve" ).addEventListener( "click", function( e ){
+		var results = document.getElementById( "results" );
+		
+		var how_many = parseInt( document.getElementById( "howmany" ).value );
+		
+		var stuffy_position = Math.floor(( Math.random() * ( how_many + 1 )) + 1 );
+		
+		var start = Date.now();
+		
+		results.innerHTML = results.innerHTML + "Stuffy Doll is object #" + stuffy_position + "<br />";
+		
+		results.innerHTML = results.innerHTML + "Working, hold on tight...<br />";
+		
+		//Creating the array that will hold the hits to each object
+		var hits = new Array();
+		
+		//Initializing array at zero
+		for( i=0; i<=how_many; i++ ){
+			hits[ i ] = 0;
+		}
+		
+		var random_hit = 0;
+		
+		//Hitting things
+		for( i=0; i<=how_many; i++ ){
+			random_hit = Math.floor(( Math.random() * ( how_many )) + 1 );
+			
+			hits[ random_hit ] = hits[ random_hit ] + 1;
+		}
+		
+		var dead_count = 0;
+		var stuffy_hits = 0;
+				
+		//Recap that have been hit
+		for( i=0; i<=how_many; i++ ){
+			if( hits[ i ] > 0 ){
+				if( i != stuffy_position ){
+					dead_count = dead_count + 1;
+				}else{
+					stuffy_hits = parseInt( hits[ i ] ) * 2;
+				}
+			}
+		}
+			
+		results.innerHTML = results.innerHTML + dead_count + " Pestermites are dead<br />";
+		results.innerHTML = results.innerHTML + "<strong>" + stuffy_hits + " points have been dealt to Stuffy Doll</strong><br />";
+		
+		var end = Date.now();
+		var diff = end - start;
+		
+		results.innerHTML = results.innerHTML + "Processing took " + diff + "ms<br /><br />";
+		
+		results.innerHTML = results.innerHTML + "Hit <em>Solve the problem!</em> to simulate again.<br /><br />";
+	});
+	-->
+	</script>
+</body>
+</html>
