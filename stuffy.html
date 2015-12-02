@@ -74,11 +74,13 @@
 			hits[ i ] = 0;
 		}
 		
-		var random_hit = 0;
+		var random_hit = -1;
 		
 		//Hitting things
-		for( i=0; i<=how_many; i++ ){
-			random_hit = Math.floor(( Math.random() * ( how_many )) + 1 );
+		for( i=0; i<how_many+1; i++ ){
+			do{
+				random_hit = Math.floor(( Math.random() * ( how_many + 1 )) );
+			}while( random_hit == i );
 			
 			hits[ random_hit ] = hits[ random_hit ] + 1;
 		}
